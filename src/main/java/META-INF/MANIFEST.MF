@@ -1,0 +1,57 @@
+Manifest-Version: 1.0
+Main-Class: com.example.glovogateway.GlovoGatewayApplication
+Class-Path: resilience4j-reactor-1.7.0.jar netty-transport-classes-epoll
+ -4.1.70.Final.jar jakarta.validation-api-2.0.2.jar bcprov-jdk15on-1.68.
+ jar spring-security-oauth2-client-5.6.0.jar spring-data-commons-2.6.0.j
+ ar classmate-1.5.1.jar nimbus-jose-jwt-9.14.jar spring-cloud-gateway-se
+ rver-3.1.0.jar accessors-smart-2.4.7.jar logback-core-1.2.7.jar resilie
+ nce4j-spring-1.7.0.jar netty-handler-proxy-4.1.70.Final.jar reactor-net
+ ty-http-1.0.13.jar content-type-2.1.jar asm-9.1.jar spring-boot-starter
+ -data-redis-reactive-2.6.1.jar spring-boot-autoconfigure-2.6.1.jar nett
+ y-resolver-dns-native-macos-4.1.70.Final-osx-x86_64.jar reactor-core-3.
+ 4.12.jar spring-oxm-5.3.13.jar jackson-module-parameter-names-2.13.0.ja
+ r netty-resolver-4.1.70.Final.jar jaxb-core-2.3.0.1.jar netty-transport
+ -native-unix-common-4.1.70.Final.jar spring-boot-actuator-2.6.1.jar res
+ ilience4j-annotations-1.7.0.jar spring-boot-starter-validation-2.6.1.ja
+ r tomcat-embed-el-9.0.55.jar spring-boot-starter-webflux-2.6.1.jar spri
+ ng-session-data-redis-2.6.0.jar netty-codec-4.1.70.Final.jar spring-clo
+ ud-starter-3.1.0.jar spring-boot-starter-logging-2.6.1.jar micrometer-c
+ ore-1.8.0.jar spring-tx-5.3.13.jar spring-data-redis-2.6.0.jar resilien
+ ce4j-framework-common-1.7.0.jar vavr-0.10.2.jar netty-buffer-4.1.70.Fin
+ al.jar jakarta.annotation-api-1.3.5.jar netty-resolver-dns-classes-maco
+ s-4.1.70.Final.jar jcip-annotations-1.0-1.jar spring-cloud-circuitbreak
+ er-resilience4j-2.1.0.jar spring-session-core-2.6.0.jar netty-codec-htt
+ p2-4.1.70.Final.jar jackson-annotations-2.13.0.jar logback-classic-1.2.
+ 7.jar LatencyUtils-2.0.3.jar spring-boot-actuator-autoconfigure-2.6.1.j
+ ar spring-context-5.3.13.jar netty-codec-http-4.1.70.Final.jar oauth2-o
+ idc-sdk-9.19.jar spring-cloud-context-3.1.0.jar spring-security-crypto-
+ 5.6.0.jar resilience4j-core-1.7.0.jar json-smart-2.4.7.jar resilience4j
+ -circularbuffer-1.7.0.jar resilience4j-timelimiter-1.7.0.jar resilience
+ 4j-retry-1.7.0.jar HdrHistogram-2.1.12.jar spring-boot-starter-reactor-
+ netty-2.6.1.jar netty-resolver-dns-4.1.70.Final.jar spring-security-cor
+ e-5.6.0.jar spring-web-5.3.13.jar jaxb-api-2.3.1.jar spring-cloud-start
+ er-circuitbreaker-reactor-resilience4j-2.1.0.jar spring-security-config
+ -5.6.0.jar log4j-api-2.14.1.jar spring-boot-starter-data-redis-2.6.1.ja
+ r jboss-logging-3.4.2.Final.jar spring-boot-starter-actuator-2.6.1.jar 
+ netty-transport-4.1.70.Final.jar resilience4j-circuitbreaker-1.7.0.jar 
+ spring-boot-starter-2.6.1.jar bcpkix-jdk15on-1.68.jar jackson-core-2.13
+ .0.jar vavr-match-0.10.2.jar spring-jcl-5.3.13.jar lang-tag-1.5.jar slf
+ 4j-api-1.7.32.jar resilience4j-consumer-1.7.0.jar resilience4j-micromet
+ er-1.7.0.jar log4j-to-slf4j-2.14.1.jar reactive-streams-1.0.3.jar resil
+ ience4j-spring-boot2-1.7.0.jar spring-security-web-5.6.0.jar spring-sec
+ urity-oauth2-jose-5.6.0.jar netty-handler-4.1.70.Final.jar spring-webfl
+ ux-5.3.13.jar jaxb-impl-2.3.1.jar jul-to-slf4j-1.7.32.jar netty-common-
+ 4.1.70.Final.jar hibernate-validator-6.2.0.Final.jar spring-expression-
+ 5.3.13.jar spring-boot-starter-json-2.6.1.jar reactor-extra-3.4.5.jar n
+ etty-transport-native-epoll-4.1.70.Final-linux-x86_64.jar netty-codec-s
+ ocks-4.1.70.Final.jar spring-core-5.3.13.jar spring-cloud-commons-3.1.0
+ .jar lettuce-core-6.1.5.RELEASE.jar spring-data-keyvalue-2.6.0.jar spri
+ ng-boot-starter-oauth2-client-2.6.1.jar netty-codec-dns-4.1.70.Final.ja
+ r reactor-netty-core-1.0.13.jar spring-aop-5.3.13.jar spring-security-o
+ auth2-core-5.6.0.jar spring-beans-5.3.13.jar spring-cloud-starter-gatew
+ ay-3.1.0.jar snakeyaml-1.29.jar javax.activation-api-1.2.0.jar jackson-
+ databind-2.13.0.jar spring-boot-2.6.1.jar spring-context-support-5.3.13
+ .jar jackson-datatype-jdk8-2.13.0.jar resilience4j-ratelimiter-1.7.0.ja
+ r spring-security-rsa-1.0.10.RELEASE.jar jackson-datatype-jsr310-2.13.0
+ .jar
+

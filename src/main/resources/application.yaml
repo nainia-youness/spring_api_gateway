@@ -1,0 +1,113 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 10
+            redis-rate-limiter.burstCapacity: 20
+      routes:
+        - id: orders
+          uri: http://localhost:8000/
+          predicates:
+            - Method=GET,POST
+            - Path=/orders/**
+          filters:
+            - name: Retry
+              args:
+                retries: 3
+                methods: GET
+                backoff:
+                  firstBackoff: 50ms
+                  maxBackoff: 500ms
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallBackUri: forward:/google-fallback
+        - id: restos
+          uri: http://localhost:3002/
+          predicates:
+            - Method=GET,POST
+            - Path=/restos/**
+          filters:
+            - name: Retry
+              args:
+                retries: 3
+                methods: GET
+                backoff:
+                  firstBackoff: 50ms
+                  maxBackoff: 500ms
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallBackUri: forward:/google-fallback
+        - id: livreurs
+          uri: http://localhost:3001/
+          predicates:
+            - Method=GET,POST
+            - Path=/livreurs/**
+          filters:
+            - name: Retry
+              args:
+                retries: 3
+                methods: GET
+                backoff:
+                  firstBackoff: 50ms
+                  maxBackoff: 500ms
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallBackUri: forward:/google-fallback
+  security:
+    oauth2:
+      client:
+        provider:
+          my-keycloak-provider:
+            issuer-uri: http://localhost:8080/auth/realms/myrealm
+        registration:
+          keycloak-spring-gateway-client:
+            provider: my-keycloak-provider
+            client-id: myclient
+            client-secret: HzVPy8NVehK2rp6IP2gFgFQs3IYuW1GH
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+
+# Enable these to debug the Authorization flow
+logging:
+    level:
+      org:
+        springframework:
+          security:
+            web: DEBUG
+
+#circuit breaker
+resilience4j:
+  circuitBreaker:
+    instances:
+      myCircuitBreaker:
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
+        registerHealthIndicator: true
+  timelimiter:
+    instances:
+      myCircuitBreaker:
+        timeoutDuration: 2s
+
+#redis
+session:
+  store-type: redis
+redis:
+  host: localhost
+  port: 6379
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
